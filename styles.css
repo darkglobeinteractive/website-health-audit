@@ -500,8 +500,11 @@ button.add-credential-row:hover {
   section {
     box-shadow: none;
     border: 1px solid #ccc;
-    break-inside: avoid;
     margin-bottom: 1.25rem;
+  }
+
+  .checklist li {
+    break-inside: avoid;
   }
 
   section h2 {
