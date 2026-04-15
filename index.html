@@ -32,78 +32,157 @@
       <h2>Questions &amp; Concerns About the Website</h2>
       <ul class="checklist">
 
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Is Google Analytics (GA) active and installed?</span>
-          </label>
-          <a class="add-notes" href="#">Add Notes</a>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        <!-- Google Analytics -->
+        <li id="qa-ga">
+          <div class="item-row">
+            <span class="item-title">Is Google Analytics (GA) active and installed?</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="ga-yes" name="ga" value="yes">
+                <label for="ga-yes">Yes</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="ga-no" name="ga" value="no">
+                <label for="ga-no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="ga-yes-reveal">
+            <input type="text" placeholder="Measurement ID">
+          </div>
+          <div class="radio-reveal" id="ga-no-reveal">
+            <a class="add-notes" href="#">Add Notes</a>
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
         </li>
 
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Is Google Tag Manager (GTM) active and installed?</span>
-          </label>
-          <a class="add-notes" href="#">Add Notes</a>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        <!-- Google Tag Manager -->
+        <li id="qa-gtm">
+          <div class="item-row">
+            <span class="item-title">Is Google Tag Manager (GTM) active and installed?</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="gtm-yes" name="gtm" value="yes">
+                <label for="gtm-yes">Yes</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="gtm-no" name="gtm" value="no">
+                <label for="gtm-no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="gtm-yes-reveal">
+            <input type="text" placeholder="Container ID">
+          </div>
+          <div class="radio-reveal" id="gtm-no-reveal">
+            <a class="add-notes" href="#">Add Notes</a>
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
+          <!-- Sub-item: only visible when GTM = Yes -->
           <ul class="checklist nested">
-            <li>
-              <label>
-                <input type="checkbox">
-                <span>Does GTM contain the proper GA4 Google Tag configured properly using the GA Measurement ID?</span>
-              </label>
-              <a class="add-notes" href="#">Add Notes</a>
-              <textarea class="notes" placeholder="Enter notes here..."></textarea>
+            <li id="qa-gtm-ga4" style="display:none;">
+              <div class="item-row">
+                <span class="item-title">Does GTM contain the proper GA4 Google Tag configured properly using the GA Measurement ID?</span>
+                <div class="radio-group">
+                  <div class="radio-option">
+                    <input type="radio" id="gtm-ga4-yes" name="gtm-ga4" value="yes">
+                    <label for="gtm-ga4-yes">Yes</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" id="gtm-ga4-no" name="gtm-ga4" value="no">
+                    <label for="gtm-ga4-no">No</label>
+                  </div>
+                </div>
+              </div>
+              <div class="radio-reveal" id="gtm-ga4-no-reveal">
+                <textarea class="notes" placeholder="Enter notes here..."></textarea>
+              </div>
             </li>
           </ul>
         </li>
 
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Is the site utilizing a Cookie Consent management tool or platform of some sort?</span>
-          </label>
-          <a class="add-notes" href="#">Add Notes</a>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
-          <ul class="checklist nested">
-            <li>
-              <label>
-                <input type="checkbox">
-                <span>Is this configured correctly with GTM, especially when considering Google Consent Mode?</span>
-              </label>
-              <a class="add-notes" href="#">Add Notes</a>
-              <textarea class="notes" placeholder="Enter notes here..."></textarea>
-            </li>
-          </ul>
+        <!-- Cookie Consent -->
+        <li id="qa-cookie-consent">
+          <div class="item-row">
+            <span class="item-title">Is the site utilizing a Cookie Consent management tool or platform of some sort?</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="cookie-consent-yes" name="cookie-consent" value="yes">
+                <label for="cookie-consent-yes">Yes</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="cookie-consent-no" name="cookie-consent" value="no">
+                <label for="cookie-consent-no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="cookie-consent-yes-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
         </li>
 
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Does the site use a page builder?</span>
-          </label>
-          <a class="add-notes" href="#">Add Notes</a>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        <!-- Page Builder -->
+        <li id="qa-page-builder">
+          <div class="item-row">
+            <span class="item-title">Does the site use a page builder?</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="page-builder-yes" name="page-builder" value="yes">
+                <label for="page-builder-yes">Yes</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="page-builder-no" name="page-builder" value="no">
+                <label for="page-builder-no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="page-builder-yes-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
         </li>
 
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Are there any third-party services or platforms that would require credentials (e.g. username, password, email address) for us to work with and/or migrate to a new site?</span>
-          </label>
-          <a class="add-notes" href="#">Add Notes</a>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        <!-- Third-party Credentials -->
+        <li id="qa-credentials">
+          <div class="item-row">
+            <span class="item-title">Are there any third-party services or platforms that would require credentials (e.g. username, password, email address) for us to work with and/or migrate to a new site?</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="credentials-yes" name="credentials" value="yes">
+                <label for="credentials-yes">Yes</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="credentials-no" name="credentials" value="no">
+                <label for="credentials-no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="credentials-yes-reveal">
+            <div class="credential-table-wrap">
+              <table class="credential-table">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Notes</th>
+                    <th class="col-remove"></th>
+                  </tr>
+                </thead>
+                <tbody id="credential-tbody">
+                  <tr class="credential-row">
+                    <td><input type="text" class="credential-service" placeholder="Service name"></td>
+                    <td><input type="text" class="credential-notes" placeholder="Notes"></td>
+                    <td><button class="remove-row" title="Remove row" aria-label="Remove row">&times;</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="add-credential-row" id="add-credential-row">+ Add Service</button>
+            </div>
+          </div>
         </li>
 
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Where is the site currently hosted?</span>
-          </label>
-          <a class="add-notes" href="#">Add Notes</a>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        <!-- Hosting — no checkbox, textarea always visible -->
+        <li id="qa-hosted">
+          <span class="item-title">Where is the site currently hosted?</span>
+          <textarea class="notes always-visible" placeholder="Enter notes here..."></textarea>
         </li>
 
       </ul>
@@ -136,6 +215,8 @@
             <input type="checkbox">
             <span>Evaluate installed plugins</span>
           </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
           <div class="plugin-table-wrap">
             <table class="plugin-table">
               <thead>
@@ -171,7 +252,7 @@
   </main>
 
   <footer>
-    <p>Website Health Audit &mdash; Dark Globe Development</p>
+    <p>Website Health Audit &mdash; Paragram</p>
   </footer>
 
   <script src="script.js"></script>
