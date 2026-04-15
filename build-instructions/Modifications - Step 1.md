@@ -48,6 +48,13 @@
 # Modifications to the "Are there any third-party services or platforms that would require credentials (e.g. username, password, email address) for us to work with and/or migrate to a new site?" item
 
 - Remove the existing checkbox
-- Do not display the "Add Notes" link by default
+- Remove the "Add Notes" functionality and its associated textarea field
 - Add a radio box pair to the right of the title with Yes and No options
-- If "Yes" is chosen, display the "Add Notes" link retaining its original functionality
+- If "Yes" is chosen, display a repeater section below the title of the item with the following options per row
+  - Service
+  - Notes
+- Display this repeater in table form
+
+# Modifications to the "Where is the site currently hosted?" item
+
+- Remove the "Add Notes" toggle and make the textarea associated with this item visible by default
