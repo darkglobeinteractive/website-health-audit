@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Health Audit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Website Health Audit</h1>
+    <div class="client-info">
+      <div class="client-field">
+        <label for="client-name">Client Name</label>
+        <input type="text" id="client-name" placeholder="Enter client name">
+      </div>
+      <div class="client-field">
+        <label for="client-url">Website URL</label>
+        <input type="text" id="client-url" placeholder="https://example.com">
+      </div>
+      <div class="client-field">
+        <label for="audit-date">Audit Date</label>
+        <input type="date" id="audit-date">
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Questions &amp; Concerns About the Website</h2>
+      <ul class="checklist">
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Is Google Analytics (GA) active and installed?</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Is Google Tag Manager (GTM) active and installed?</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          <ul class="checklist nested">
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>Does GTM contain the proper GA4 Google Tag configured properly using the GA Measurement ID?</span>
+              </label>
+              <a class="add-notes" href="#">Add Notes</a>
+              <textarea class="notes" placeholder="Enter notes here..."></textarea>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Is the site utilizing a Cookie Consent management tool or platform of some sort?</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          <ul class="checklist nested">
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>Is this configured correctly with GTM, especially when considering Google Consent Mode?</span>
+              </label>
+              <a class="add-notes" href="#">Add Notes</a>
+              <textarea class="notes" placeholder="Enter notes here..."></textarea>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Does the site use a page builder?</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Are there any third-party services or platforms that would require credentials (e.g. username, password, email address) for us to work with and/or migrate to a new site?</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Where is the site currently hosted?</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        </li>
+
+      </ul>
+    </section>
+
+    <section>
+      <h2>Actions to be Taken During Site Evaluation</h2>
+      <ul class="checklist">
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Run Claude's <code>/init</code> command to get an overview of theme functionality</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            <span>Run a browser-based audit of Accessibility concerns</span>
+          </label>
+          <a class="add-notes" href="#">Add Notes</a>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+        </li>
+
+        <li class="li-plugins">
+          <label>
+            <input type="checkbox">
+            <span>Evaluate installed plugins</span>
+          </label>
+          <div class="plugin-table-wrap">
+            <table class="plugin-table">
+              <thead>
+                <tr>
+                  <th>Plugin Name</th>
+                  <th>Status</th>
+                  <th>Notes</th>
+                  <th class="col-remove"></th>
+                </tr>
+              </thead>
+              <tbody id="plugin-tbody">
+                <tr class="plugin-row">
+                  <td><input type="text" class="plugin-name" placeholder="Plugin name"></td>
+                  <td>
+                    <select class="plugin-status">
+                      <option value="">— Select —</option>
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                  </td>
+                  <td><input type="text" class="plugin-notes" placeholder="Notes"></td>
+                  <td><button class="remove-row" title="Remove row" aria-label="Remove row">&times;</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="add-plugin-row" id="add-plugin-row">+ Add Plugin</button>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Website Health Audit &mdash; Dark Globe Development</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

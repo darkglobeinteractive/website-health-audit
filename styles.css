@@ -1,0 +1,467 @@
+/* =============================================
+   Base & Reset
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #f4f5f7;
+}
+
+/* =============================================
+   Header
+   ============================================= */
+
+header {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+
+header > * {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.client-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.client-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 200px;
+}
+
+.client-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+.client-field input {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.65rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.client-field input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.client-field input:focus {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* date input calendar icon color on webkit */
+.client-field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.6);
+  cursor: pointer;
+}
+
+/* =============================================
+   Main Content
+   ============================================= */
+
+main {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+section h2 {
+  background: #e8edf3;
+  border-bottom: 1px solid #d0d8e4;
+  color: #1e3a5f;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1.5rem;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   Checklist
+   ============================================= */
+
+.checklist {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.checklist li {
+  border-bottom: 1px solid #f0f2f5;
+  padding: 0.65rem 1.5rem;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist label {
+  align-items: flex-start;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.6rem;
+  max-width: calc(100% - 90px);
+  vertical-align: top;
+}
+
+.checklist label input[type="checkbox"] {
+  accent-color: #1e3a5f;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 16px;
+  margin-top: 3px;
+  width: 16px;
+}
+
+.checklist label span {
+  font-size: 0.95rem;
+}
+
+.checklist label input[type="checkbox"]:checked + span {
+  color: #888;
+  text-decoration: line-through;
+}
+
+.checklist code {
+  background: #f0f2f5;
+  border-radius: 3px;
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+}
+
+/* Nested lists */
+.checklist.nested {
+  margin-top: 0.5rem;
+  padding: 0;
+  border-left: 3px solid #d0d8e4;
+  margin-left: 1.5rem;
+}
+
+.checklist.nested li {
+  padding-left: 1rem;
+}
+
+/* =============================================
+   Add Notes Link
+   ============================================= */
+
+a.add-notes {
+  color: #2e6da4;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  vertical-align: top;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+a.add-notes:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   Notes Textarea
+   ============================================= */
+
+textarea.notes {
+  background: #f8f9fb;
+  border: 1px solid #d0d8e4;
+  border-radius: 4px;
+  display: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  min-height: 80px;
+  padding: 0.55rem 0.75rem;
+  resize: vertical;
+  width: 100%;
+}
+
+textarea.notes.visible {
+  display: block;
+}
+
+textarea.notes:focus {
+  border-color: #2e6da4;
+  outline: none;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+
+footer {
+  color: #888;
+  font-size: 0.8rem;
+  padding: 1rem 2.5rem 2rem;
+  text-align: center;
+}
+
+/* =============================================
+   Plugin Table
+   ============================================= */
+
+.li-plugins {
+  display: block;
+}
+
+.plugin-table-wrap {
+  margin-top: 0.85rem;
+}
+
+.plugin-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88rem;
+}
+
+.plugin-table th {
+  background: #e8edf3;
+  border: 1px solid #d0d8e4;
+  color: #1e3a5f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.plugin-table td {
+  border: 1px solid #e2e6ec;
+  padding: 0.4rem 0.5rem;
+  vertical-align: middle;
+}
+
+.plugin-table .col-remove {
+  width: 36px;
+  border: none;
+  background: transparent;
+}
+
+.plugin-table tbody tr:nth-child(even) td {
+  background: #f8f9fb;
+}
+
+.plugin-table input[type="text"],
+.plugin-table select {
+  background: #fff;
+  border: 1px solid #d0d8e4;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 0.35rem 0.5rem;
+  width: 100%;
+}
+
+.plugin-table input[type="text"]:focus,
+.plugin-table select:focus {
+  border-color: #2e6da4;
+  outline: none;
+}
+
+.plugin-table select {
+  appearance: auto;
+}
+
+.plugin-table select option[value="active"]  { color: #1a7c3e; }
+.plugin-table select option[value="inactive"]{ color: #a04000; }
+
+/* Style the selected value */
+.plugin-table select.status-active   { color: #1a7c3e; font-weight: 600; }
+.plugin-table select.status-inactive { color: #a04000; font-weight: 600; }
+
+button.remove-row {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+
+button.remove-row:hover {
+  background: #fde8e8;
+  color: #c0392b;
+}
+
+button.add-plugin-row {
+  background: #1e3a5f;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  transition: background 0.15s;
+}
+
+button.add-plugin-row:hover {
+  background: #2e6da4;
+}
+
+/* =============================================
+   Print Styles
+   ============================================= */
+
+@media print {
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  header {
+    background: #1e3a5f !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 1rem 1.5rem;
+  }
+
+  header > * {
+    max-width: 100%;
+  }
+
+  header h1 {
+    font-size: 16pt;
+    margin-bottom: 0.75rem;
+  }
+
+  .client-field input {
+    border: none;
+    background: transparent !important;
+    color: #fff !important;
+    padding: 0;
+  }
+
+  .client-field input::placeholder {
+    color: transparent;
+  }
+
+  main {
+    margin: 1rem auto;
+    max-width: 100%;
+    padding: 0 1rem 1rem;
+  }
+
+  section {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+  }
+
+  section h2 {
+    background: #e8edf3 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide the "Add Notes" links — they're interactive only */
+  a.add-notes {
+    display: none !important;
+  }
+
+  /* Show textareas that have content; hide empty ones */
+  textarea.notes {
+    display: none !important;
+  }
+
+  textarea.notes.has-content {
+    display: block !important;
+    border: 1px solid #ccc;
+    background: #fafafa !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    overflow: visible;
+    height: auto;
+    min-height: 0;
+    resize: none;
+  }
+
+  footer {
+    font-size: 8pt;
+  }
+
+  button.add-plugin-row,
+  button.remove-row {
+    display: none !important;
+  }
+
+  .plugin-table input[type="text"],
+  .plugin-table select {
+    border: none;
+    background: transparent !important;
+    padding: 0;
+    font-size: 10pt;
+  }
+
+  .plugin-table th,
+  .plugin-table td {
+    border: 1px solid #ccc !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .plugin-table th {
+    background: #e8edf3 !important;
+  }
+
+  .plugin-table .col-remove {
+    display: none;
+  }
+
+  /* Ensure checkbox state prints */
+  input[type="checkbox"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
