@@ -53,6 +53,10 @@ header h1 {
   min-width: 200px;
 }
 
+.client-field.flex-1 { 
+  flex: 1;
+}
+
 .client-field label {
   font-size: 0.75rem;
   font-weight: 600;
