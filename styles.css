@@ -212,9 +212,13 @@ section h2 {
 }
 
 .item-title {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   flex: 1;
   min-width: 0;
+}
+.item-title strong {
+  display: block;
+  font-size: 1rem;
 }
 
 .radio-group {

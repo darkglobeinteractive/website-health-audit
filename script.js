@@ -42,6 +42,7 @@ window.addEventListener('beforeprint', function () {
  *   onReset   — optional side-effects when the group is fully deselected
  */
 var RADIO_CONFIG = {
+  'indexing-status': { reveals: { no: 'indexing-status-no-reveal' } },
   'ga':             { reveals: { yes: 'ga-yes-reveal',               no: 'ga-no-reveal' } },
   'gtm': {
     reveals:  { yes: 'gtm-yes-reveal', no: 'gtm-no-reveal' },

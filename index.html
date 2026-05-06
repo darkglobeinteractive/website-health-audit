@@ -29,9 +29,29 @@
 
   <main>
 
-    <section>
-      <h2>Questions &amp; Concerns About the Website</h2>
+    <section class="visibility">
+      <h2>Visibility &amp; Search Engine Health</h2>
       <ul class="checklist">
+
+        <!-- Indexing Status -->
+        <li id="indexing-status">
+          <div class="item-row">
+            <span class="item-title"><strong>Indexing Status</strong> Site is properly indexed by Google and <em>"discourage search engine"</em> settings are inactive</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="indexing-status-yes" name="indexing-status" value="yes">
+                <label for="indexing-status-yes">Yes</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="indexing-status-no" name="indexing-status" value="no">
+                <label for="indexing-status-no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="indexing-status-no-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
+        </li>
 
         <!-- Google Analytics -->
         <li id="qa-ga">
@@ -183,6 +203,13 @@
           <span class="item-title">Where is the site currently hosted?</span>
           <textarea class="notes always-visible" placeholder="Enter notes here..."></textarea>
         </li>
+
+      </ul>
+    </section>
+
+    <section class="architecture">
+      <h2>Architecture &amp; Technical Infrastructure</h2>
+      <ul class="checklist">
 
       </ul>
     </section>
