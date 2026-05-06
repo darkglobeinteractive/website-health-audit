@@ -4,7 +4,6 @@
 
 document.addEventListener('click', function (e) {
   if (!e.target.classList.contains('add-notes')) return;
-  e.preventDefault();
 
   var link     = e.target;
   var textarea = link.parentNode.querySelector(':scope > textarea.notes');

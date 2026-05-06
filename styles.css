@@ -284,20 +284,24 @@ section h2 {
    Add Notes Link
    ============================================= */
 
-a.add-notes {
+button.add-notes {
+  background: none;
+  border: none;
   color: #eb387f;
+  cursor: pointer;
   display: inline-block;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   margin-left: 0.5rem;
+  padding: 0;
   text-decoration: none;
   vertical-align: top;
   margin-top: 4px;
   white-space: nowrap;
 }
 
-a.add-notes:hover {
+button.add-notes:hover {
   text-decoration: underline;
 }
 
@@ -537,7 +541,7 @@ button.add-credential-row:hover {
   }
 
   /* Hide interactive-only elements */
-  a.add-notes {
+  button.add-notes {
     display: none !important;
   }
 
