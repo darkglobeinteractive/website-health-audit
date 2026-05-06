@@ -173,8 +173,8 @@ document.getElementById('add-plugin-row').addEventListener('click', function () 
   var template = tbody.querySelector('.plugin-row');
   var newRow = template.cloneNode(true);
 
-  newRow.querySelectorAll('input[type="text"]').forEach(function (input) {
-    input.value = '';
+  newRow.querySelectorAll('input[type="text"], textarea').forEach(function (field) {
+    field.value = '';
   });
   newRow.querySelectorAll('select').forEach(function (select) {
     select.value = '';
@@ -208,8 +208,8 @@ document.getElementById('add-credential-row').addEventListener('click', function
   var template = tbody.querySelector('.credential-row');
   var newRow = template.cloneNode(true);
 
-  newRow.querySelectorAll('input[type="text"]').forEach(function (input) {
-    input.value = '';
+  newRow.querySelectorAll('input[type="text"], textarea').forEach(function (field) {
+    field.value = '';
   });
 
   tbody.appendChild(newRow);

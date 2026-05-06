@@ -32,12 +32,20 @@ header > * {
   margin-right: auto;
 }
 
-header h1 {
-  font-size: 1.75rem;
+header h1,
+header h2 {
+  color: #1cf0c4;
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+header h2 {
   margin-bottom: 1.25rem;
-  color: #1cf0c4;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .client-info {
@@ -368,7 +376,7 @@ footer {
 .credential-table td {
   border: 1px solid #e2e6ec;
   padding: 0.4rem 0.5rem;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .plugin-table .col-remove,
@@ -384,8 +392,10 @@ footer {
 }
 
 .plugin-table input[type="text"],
+.plugin-table textarea,
 .plugin-table select,
-.credential-table input[type="text"] {
+.credential-table input[type="text"],
+.credential-table textarea {
   background: #fff;
   border: 1px solid #d0d8e4;
   border-radius: 4px;
@@ -395,9 +405,17 @@ footer {
   width: 100%;
 }
 
+.plugin-table textarea,
+.credential-table textarea {
+  resize: vertical;
+  vertical-align: top;
+}
+
 .plugin-table input[type="text"]:focus,
+.plugin-table textarea:focus,
 .plugin-table select:focus,
-.credential-table input[type="text"]:focus {
+.credential-table input[type="text"]:focus,
+.credential-table textarea:focus {
   border-color: #1cf0c4;
   outline: none;
 }
@@ -552,12 +570,21 @@ button.add-credential-row:hover {
   }
 
   .plugin-table input[type="text"],
+  .plugin-table textarea,
   .plugin-table select,
-  .credential-table input[type="text"] {
+  .credential-table input[type="text"],
+  .credential-table textarea {
     border: none;
     background: transparent !important;
     padding: 0;
     font-size: 10pt;
+  }
+
+  .plugin-table textarea,
+  .credential-table textarea {
+    overflow: visible;
+    height: auto;
+    resize: none;
   }
 
   .plugin-table th,
