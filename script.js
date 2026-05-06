@@ -161,6 +161,44 @@ initDynamicTable({
 });
 
 /* =============================================
+   Info popover
+   ============================================= */
+
+var infoPopover = null;
+
+function getInfoPopover() {
+  if (!infoPopover) {
+    infoPopover = document.createElement('div');
+    infoPopover.className = 'info-popover';
+    document.body.appendChild(infoPopover);
+  }
+  return infoPopover;
+}
+
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.info-btn');
+  if (btn) {
+    var popover = getInfoPopover();
+    if (popover._anchor === btn && popover.style.display !== 'none') {
+      popover.style.display = 'none';
+      popover._anchor = null;
+      return;
+    }
+    popover.textContent = btn.dataset.info;
+    popover.style.display = 'block';
+    popover._anchor = btn;
+    var rect = btn.getBoundingClientRect();
+    popover.style.top  = (rect.bottom + window.scrollY + 8) + 'px';
+    popover.style.left = (rect.left   + window.scrollX)     + 'px';
+    return;
+  }
+  if (infoPopover && infoPopover.style.display !== 'none' && !infoPopover.contains(e.target)) {
+    infoPopover.style.display = 'none';
+    infoPopover._anchor = null;
+  }
+});
+
+/* =============================================
    Set today's date as the default audit date
    ============================================= */
 
