@@ -139,6 +139,11 @@ section h2 {
 }
 
 .checklist li {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0 0.75em;
   border-bottom: 1px solid #f0f2f5;
   padding: 0.75rem 1.5rem;
 }
@@ -203,6 +208,7 @@ section h2 {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .item-title {
@@ -250,6 +256,7 @@ section h2 {
 
 .radio-reveal {
   display: none;
+  width: 100%;
   margin-top: 0.65rem;
 }
 
@@ -293,11 +300,10 @@ button.add-notes {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  margin-left: 0.5rem;
+  margin: 0;
   padding: 0;
   text-decoration: none;
   vertical-align: top;
-  margin-top: 4px;
   white-space: nowrap;
 }
 
@@ -353,6 +359,7 @@ footer {
 
 .plugin-table-wrap,
 .credential-table-wrap {
+  width: 100%;
   margin-top: 0.85rem;
 }
 
