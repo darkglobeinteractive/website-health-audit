@@ -598,6 +598,17 @@ button.add-credential-row:hover {
     resize: none;
   }
 
+  .plugin-table select {
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: center;
+  }
+
+  .plugin-table th.status,
+  .plugin-table td:has(.plugin-status) {
+    text-align: center;
+  }
+
   .plugin-table th,
   .plugin-table td,
   .credential-table th,

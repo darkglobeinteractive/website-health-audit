@@ -20,8 +20,15 @@ document.addEventListener('click', function (e) {
    ============================================= */
 
 document.addEventListener('input', function (e) {
-  if (!e.target.classList.contains('notes')) return;
-  e.target.classList.toggle('has-content', e.target.value.trim().length > 0);
+  if (e.target.tagName !== 'TEXTAREA') return;
+  autoResizeTextarea(e.target);
+  if (e.target.classList.contains('notes')) {
+    e.target.classList.toggle('has-content', e.target.value.trim().length > 0);
+  }
+});
+
+window.addEventListener('beforeprint', function () {
+  document.querySelectorAll('textarea').forEach(autoResizeTextarea);
 });
 
 /* =============================================
@@ -170,6 +177,13 @@ initDynamicTable({
 /* =============================================
    Helpers
    ============================================= */
+
+function autoResizeTextarea(el) {
+  el.style.height = 'auto';
+  var minHeight = el.offsetHeight; // intrinsic rows-based height; 0 when element is hidden
+  if (!minHeight) return;
+  el.style.height = Math.max(el.scrollHeight, minHeight) + 'px';
+}
 
 function showReveal(id) {
   var el = document.getElementById(id);
