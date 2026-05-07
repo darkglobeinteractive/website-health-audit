@@ -44,6 +44,7 @@ window.addEventListener('beforeprint', function () {
 var RADIO_CONFIG = {
   'indexing-status': { reveals: { no: 'indexing-status-no-reveal' } },
   'sitemap-health': { reveals: { no: 'sitemap-health-no-reveal' } },
+  'ssl-security': { reveals: { no: 'ssl-security-no-reveal' } },
   'ga':             { reveals: { yes: 'ga-yes-reveal',               no: 'ga-no-reveal' } },
   'gtm': {
     reveals:  { yes: 'gtm-yes-reveal', no: 'gtm-no-reveal' },
