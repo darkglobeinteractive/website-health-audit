@@ -36,7 +36,7 @@
         <!-- Indexing Status -->
         <li id="indexing-status">
           <div class="item-row">
-            <span class="item-title"><strong>Indexing Status <button class="info-btn" style="display: none;" data-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">i</button></strong> Site is properly indexed by Google and <em>"discourage search engine"</em> settings are inactive</span>
+            <span class="item-title"><strong>Indexing Status</strong> Site is properly indexed by Google and <em>"discourage search engine"</em> settings are inactive</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="indexing-status-yes" name="indexing-status" value="yes">
@@ -56,7 +56,7 @@
         <!-- Sitemap Health -->
         <li id="sitemap-health">
           <div class="item-row">
-            <span class="item-title"><strong>Sitemap Health <button class="info-btn" data-info="Common locations are /sitemap.xml and /sitemap_index.xml">i</button></strong> Site utilizes a valid XML sitemap</span>
+            <span class="item-title"><strong>Sitemap Health <button class="info-btn">i</button></strong> Site utilizes a valid XML sitemap</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="sitemap-health-yes" name="sitemap-health" value="yes">
@@ -71,12 +71,20 @@
           <div class="radio-reveal" id="sitemap-health-no-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
+          <div class="helper-info">
+            <p><strong>Sitemap Health</strong></p>
+            <p>Common locations for a sitemap are:</p>
+            <ul>
+              <li>Non-Yoast: <code>/sitemap.xml</code></li>
+              <li>Yoast SEO: <code>/sitemap_index.xml</code></li>
+            </ul>
+          </div>
         </li>
 
         <!-- SSL & Security Encryption -->
         <li id="ssl-security">
           <div class="item-row">
-            <span class="item-title"><strong>SSL &amp; Security Encryption <button class="info-btn" data-info="">i</button></strong> Valid SSL certificate is active and there are no "mixed content" warnings</span>
+            <span class="item-title"><strong>SSL &amp; Security Encryption <button class="info-btn">i</button></strong> Valid SSL certificate is active and there are no "mixed content" warnings</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="ssl-security-yes" name="ssl-security" value="yes">
@@ -91,6 +99,7 @@
           <div class="radio-reveal" id="ssl-security-no-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
+          <div class="helper-info"></div>
         </li>
 
         <!-- Google Analytics -->

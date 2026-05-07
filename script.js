@@ -163,41 +163,50 @@ initDynamicTable({
 });
 
 /* =============================================
-   Info popover
+   Info modal
    ============================================= */
 
-var infoPopover = null;
+var infoModal = null;
 
-function getInfoPopover() {
-  if (!infoPopover) {
-    infoPopover = document.createElement('div');
-    infoPopover.className = 'info-popover';
-    document.body.appendChild(infoPopover);
+function getInfoModal() {
+  if (!infoModal) {
+    infoModal = document.createElement('div');
+    infoModal.className = 'info-modal';
+    infoModal.innerHTML =
+      '<div class="info-modal-backdrop"></div>' +
+      '<div class="info-modal-box">' +
+        '<button class="info-modal-close" aria-label="Close">&times;</button>' +
+        '<div class="info-modal-content"></div>' +
+      '</div>';
+    document.body.appendChild(infoModal);
+
+    infoModal.querySelector('.info-modal-backdrop').addEventListener('click', closeInfoModal);
+    infoModal.querySelector('.info-modal-close').addEventListener('click', closeInfoModal);
   }
-  return infoPopover;
+  return infoModal;
+}
+
+function closeInfoModal() {
+  if (infoModal) {
+    infoModal.style.display = 'none';
+  }
 }
 
 document.addEventListener('click', function (e) {
   var btn = e.target.closest('.info-btn');
   if (btn) {
-    var popover = getInfoPopover();
-    if (popover._anchor === btn && popover.style.display !== 'none') {
-      popover.style.display = 'none';
-      popover._anchor = null;
-      return;
-    }
-    popover.textContent = btn.dataset.info;
-    popover.style.display = 'block';
-    popover._anchor = btn;
-    var rect = btn.getBoundingClientRect();
-    popover.style.top  = (rect.bottom + window.scrollY + 8) + 'px';
-    popover.style.left = (rect.left   + window.scrollX)     + 'px';
+    var li = btn.closest('li');
+    var helperInfo = li ? li.querySelector('.helper-info') : null;
+    if (!helperInfo || !helperInfo.innerHTML.trim()) return;
+    var modal = getInfoModal();
+    modal.querySelector('.info-modal-content').innerHTML = helperInfo.innerHTML;
+    modal.style.display = 'flex';
     return;
   }
-  if (infoPopover && infoPopover.style.display !== 'none' && !infoPopover.contains(e.target)) {
-    infoPopover.style.display = 'none';
-    infoPopover._anchor = null;
-  }
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeInfoModal();
 });
 
 /* =============================================
