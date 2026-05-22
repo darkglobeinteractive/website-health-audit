@@ -616,6 +616,33 @@ button.add-credential-row:hover {
   display: block;
 }
 
+/* even columns of labels and text fields */
+.even-label-text-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+.even-label-text-columns .item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.even-label-text-columns .item label {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-weight: 700;
+  width: 160px;
+}
+.even-label-text-columns .item input {
+  flex: 1;
+  min-width: 0;
+}
+
 /* =============================================
    Print Styles
    ============================================= */
