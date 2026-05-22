@@ -218,7 +218,7 @@
         <!-- PageSpeed Insights -->
         <li id="qa-pagespeed-insights">
           <div class="item-row">
-            <span class="item-title"><strong>PageSpeed Insights <button class="info-btn">i</button></strong> Run the site through <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a> and save results in a PDF.</span>
+            <span class="item-title"><strong>PageSpeed Insights <button class="info-btn">i</button></strong> Run the site through <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a> and save results in a PDF</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="pagespeed-insights-done" name="pagespeed-insights" value="done">
@@ -262,17 +262,29 @@
           </div>
         </li>
 
-        <!-- xxx -->
-         <li id="qa-xxx">
+        <!-- Mobile UX Review -->
+        <li id="qa-mobile-ux-review">
           <div class="item-row">
-            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
-
-            <div class="helper-info">
-              <p><strong>xxx</strong></p>
-              <p>xxx</strong>
+            <span class="item-title"><strong>Mobile UX Review <button class="info-btn">i</button></strong> Verify nothing is broken or insufficient in small mobile devices</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="mobile-ux-review-all-good" name="mobile-ux-review" value="all-good">
+                <label for="mobile-ux-review-all-good">All Good</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="mobile-ux-review-issues-found" name="mobile-ux-review" value="issues-found">
+                <label for="mobile-ux-review-issues-found">Issues Found</label>
+              </div>
             </div>
           </div>
-         </li>
+          <div class="radio-reveal" id="mobile-ux-review-issues-found-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
+          <div class="helper-info">
+            <p><strong>Mobile UX Review</strong></p>
+            <p>Testing the site on mobile devices to identify "tap targets" that are too small, horizontal scrolling issues, or text that is difficult to read on small screens.</p>
+          </div>
+        </li>
 
         <!-- xxx -->
          <li id="qa-xxx">
