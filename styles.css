@@ -565,6 +565,14 @@ footer {
 .plugin-table select.status-active   { color: #0aad8a; font-weight: 600; }
 .plugin-table select.status-inactive { color: #eb387f; font-weight: 600; }
 
+.plugin-table select option[value="keep"]    { color: #0aad8a; }
+.plugin-table select option[value="replace"] { color: #0a151a; }
+.plugin-table select option[value="delete"]  { color: #eb387f; }
+
+.plugin-table select.action-keep    { color: #0aad8a; font-weight: 600; }
+.plugin-table select.action-replace { color: #0a151a; font-weight: 600; }
+.plugin-table select.action-delete  { color: #eb387f; font-weight: 600; }
+
 button.remove-row {
   background: none;
   border: none;

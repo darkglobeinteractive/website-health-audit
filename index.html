@@ -286,17 +286,68 @@
           </div>
         </li>
 
-        <!-- xxx -->
-         <li id="qa-xxx">
+        <!-- Accessibility Compliance -->
+        <li id="qa-accessibility-compliance">
           <div class="item-row">
-            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
-
-            <div class="helper-info">
-              <p><strong>xxx</strong></p>
-              <p>xxx</strong>
+            <span class="item-title"><strong>Accessibility Compliance</strong> Checking for contrast issues, alt-text gaps, and screen-reader readiness</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="accessibility-compliance-all-good" name="accessibility-compliance" value="all-good">
+                <label for="accessibility-compliance-all-good">All Good</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="accessibility-compliance-issues-found" name="accessibility-compliance" value="issues-found">
+                <label for="accessibility-compliance-issues-found">Issues Found</label>
+              </div>
             </div>
           </div>
-         </li>
+          <div class="radio-reveal" id="accessibility-compliance-issues-found-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
+        </li>
+
+        <!-- Plugin Audit -->
+        <li id="qa-plugin-audit" class="li-plugins">
+          <span class="title"><strong>Plugin Efficiency Audit</strong></span>
+          <button class="add-notes" type="button">Add Notes</button>
+          <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          <div class="plugin-table-wrap">
+            <table class="plugin-table">
+              <thead>
+                <tr>
+                  <th>Plugin Name</th>
+                  <th class="status">Status</th>
+                  <th class="action">Action</th>
+                  <th>Notes</th>
+                  <th class="col-remove"></th>
+                </tr>
+              </thead>
+              <tbody id="plugin-tbody">
+                <tr class="plugin-row">
+                  <td><input type="text" class="plugin-name" placeholder="Plugin name"></td>
+                  <td>
+                    <select class="plugin-status">
+                      <option value="">— Select —</option>
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="action-status">
+                      <option value="">— Select —</option>
+                      <option value="keep">Keep</option>
+                      <option value="replace">Replace (Modernize)</option>
+                      <option value="delete">Delete (Bloat)</option>
+                    </select>
+                  </td>
+                  <td><textarea class="plugin-notes" placeholder="Notes" rows="2"></textarea></td>
+                  <td class="col-remove"><button class="remove-row" title="Remove row" aria-label="Remove row">&times;</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="add-plugin-row" id="add-plugin-row">+ Add Plugin</button>
+          </div>
+        </li>
 
         <!-- xxx -->
          <li id="qa-xxx">
@@ -426,42 +477,6 @@
           </label>
           <button class="add-notes" type="button">Add Notes</button>
           <textarea class="notes" placeholder="Enter notes here..."></textarea>
-        </li>
-
-        <li class="li-plugins">
-          <label>
-            <input type="checkbox">
-            <span>Evaluate installed plugins</span>
-          </label>
-          <button class="add-notes" type="button">Add Notes</button>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
-          <div class="plugin-table-wrap">
-            <table class="plugin-table">
-              <thead>
-                <tr>
-                  <th>Plugin Name</th>
-                  <th class="status">Status</th>
-                  <th>Notes</th>
-                  <th class="col-remove"></th>
-                </tr>
-              </thead>
-              <tbody id="plugin-tbody">
-                <tr class="plugin-row">
-                  <td><input type="text" class="plugin-name" placeholder="Plugin name"></td>
-                  <td>
-                    <select class="plugin-status">
-                      <option value="">— Select —</option>
-                      <option value="active">Active</option>
-                      <option value="inactive">Inactive</option>
-                    </select>
-                  </td>
-                  <td><textarea class="plugin-notes" placeholder="Notes" rows="2"></textarea></td>
-                  <td class="col-remove"><button class="remove-row" title="Remove row" aria-label="Remove row">&times;</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <button class="add-plugin-row" id="add-plugin-row">+ Add Plugin</button>
-          </div>
         </li>
 
       </ul>

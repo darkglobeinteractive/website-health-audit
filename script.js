@@ -57,7 +57,8 @@ var RADIO_CONFIG = {
   'gtm-ga4':        { reveals: { no:  'gtm-ga4-no-reveal' } },
   'pagespeed-insights':    { reveals: { done: 'pagespeed-insights-done-reveal', incomplete: 'pagespeed-insights-incomplete-reveal' } },
   'browser-console-audit': { reveals: { 'issues-found': 'browser-console-audit-issues-found-reveal' } },
-  'mobile-ux-review':      { reveals: { 'issues-found': 'mobile-ux-review-issues-found-reveal' } },
+  'mobile-ux-review':          { reveals: { 'issues-found': 'mobile-ux-review-issues-found-reveal' } },
+  'accessibility-compliance':  { reveals: { 'issues-found': 'accessibility-compliance-issues-found-reveal' } },
   'cookie-consent': { reveals: { yes: 'cookie-consent-yes-reveal' } },
   'page-builder':   { reveals: { yes: 'page-builder-yes-reveal' } },
   'credentials':    { reveals: { yes: 'credentials-yes-reveal' } }
@@ -149,13 +150,20 @@ initDynamicTable({
   rowClass: 'plugin-row',
   addBtnId: 'add-plugin-row',
   onNewRow: function (row) {
-    row.querySelectorAll('select').forEach(function (s) { s.className = 'plugin-status'; });
+    row.querySelector('.plugin-status').className = 'plugin-status';
+    row.querySelector('.action-status').className = 'action-status';
   },
   onChange: function (e) {
-    if (!e.target.classList.contains('plugin-status')) return;
-    var select = e.target;
-    select.className = 'plugin-status';
-    if (select.value) select.classList.add('status-' + select.value);
+    if (e.target.classList.contains('plugin-status')) {
+      var s = e.target;
+      s.className = 'plugin-status';
+      if (s.value) s.classList.add('status-' + s.value);
+    }
+    if (e.target.classList.contains('action-status')) {
+      var s = e.target;
+      s.className = 'action-status';
+      if (s.value) s.classList.add('action-' + s.value);
+    }
   }
 });
 
