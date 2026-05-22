@@ -84,7 +84,7 @@
         <!-- SSL & Security Encryption -->
         <li id="ssl-security">
           <div class="item-row">
-            <span class="item-title"><strong>SSL &amp; Security Encryption <button class="info-btn">i</button></strong> Valid SSL certificate is active and there are no "mixed content" warnings</span>
+            <span class="item-title"><strong>SSL &amp; Security Encryption</strong> Valid SSL certificate is active and there are no "mixed content" warnings</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="ssl-security-yes" name="ssl-security" value="yes">
@@ -105,7 +105,7 @@
         <!-- Google Analytics -->
         <li id="qa-ga">
           <div class="item-row">
-            <span class="item-title">Is Google Analytics (GA) active and installed?</span>
+            <span class="item-title"><strong>Google Analytics (GA4) <button class="info-btn">i</button></strong> Is GA4 installed and active?</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="ga-yes" name="ga" value="yes">
@@ -123,12 +123,19 @@
           <div class="radio-reveal" id="ga-no-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
+          <div class="helper-info">
+            <p><strong>Google Analytics (GA4)</strong></p>
+            <ul>
+              <li>Search page source for <code>gtag</code> and look for the <strong>GA4 Measurement ID</strong> <code>(G-XXXXXXXXXX)</code></li>
+              <li>Do you have access to the <strong>GA4 Analytics Account</strong> and <strong>Property</strong>?</li>
+            </ul>
+          </div>
         </li>
 
         <!-- Google Tag Manager -->
         <li id="qa-gtm">
           <div class="item-row">
-            <span class="item-title">Is Google Tag Manager (GTM) active and installed?</span>
+            <span class="item-title"><strong>Google Tag Manage (GTM) <button class="info-btn">i</button></strong> Is GTM installed and active?</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="gtm-yes" name="gtm" value="yes">
@@ -167,12 +174,20 @@
               </div>
             </li>
           </ul>
+          <div class="helper-info">
+            <p><strong>Google Tag Manager (GTM)</strong></p>
+            <ul>
+              <li>Search page source for <code>Google Tag Manager</code> and look for the <strong>GTM ID</strong> <code>(GTM-XXXXXXX)</code></li>
+              <li>Do you have access to the <strong>GTM Tag Manager Account</strong> and <strong>Container</strong>?</li>
+              <li>If you have access to the container, is there a <strong>Google Tag</strong> configured with the <strong>GA4 Measurement ID</strong>?</li>
+            </ul>
+          </div>
         </li>
 
         <!-- Cookie Consent -->
         <li id="qa-cookie-consent">
           <div class="item-row">
-            <span class="item-title">Is the site utilizing a Cookie Consent management tool or platform of some sort?</span>
+            <span class="item-title"><strong>Privacy &amp; Cookie Consent <button class="info-btn">i</button></strong> Is the site utilizing a Cookie Consent management tool or platform of some sort?</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="cookie-consent-yes" name="cookie-consent" value="yes">
@@ -187,12 +202,113 @@
           <div class="radio-reveal" id="cookie-consent-yes-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
+          <div class="helper-info">
+            <p><strong>Privacy &amp; Cookie Consent</strong></p>
+            <p>Identifying if a management platform (e.g., OneTrust, CookieBot) is active for GDPR/CCPA compliance.</p>
+          </div>
         </li>
+
+      </ul>
+    </section>
+
+    <section class="architecture">
+      <h2>Speed, Performance &amp; Quality</h2>
+      <ul class="checklist">
+
+        <!-- PageSpeed Insights -->
+        <li id="qa-pagespeed-insights">
+          <div class="item-row">
+            <span class="item-title"><strong>PageSpeed Insights <button class="info-btn">i</button></strong> Run the site through <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a> and save results in a PDF.</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="pagespeed-insights-done" name="pagespeed-insights" value="done">
+                <label for="pagespeed-insights-done">Done</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="pagespeed-insights-incomplete" name="pagespeed-insights" value="incomplete">
+                <label for="pagespeed-insights-incomplete">Incomplete</label>
+              </div>
+            </div>
+          </div>
+          <div class="radio-reveal" id="pagespeed-insights-done-reveal">
+            <input type="text" placeholder="Enter PageSpeed URL here">
+          </div>
+          <div class="radio-reveal" id="pagespeed-insights-incomplete-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
+        </li>
+
+        <!-- xxx -->
+         <li id="qa-xxx">
+          <div class="item-row">
+            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
+
+            <div class="helper-info">
+              <p><strong>xxx</strong></p>
+              <p>xxx</strong>
+            </div>
+          </div>
+         </li>
+
+        <!-- xxx -->
+         <li id="qa-xxx">
+          <div class="item-row">
+            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
+
+            <div class="helper-info">
+              <p><strong>xxx</strong></p>
+              <p>xxx</strong>
+            </div>
+          </div>
+         </li>
+
+        <!-- xxx -->
+         <li id="qa-xxx">
+          <div class="item-row">
+            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
+
+            <div class="helper-info">
+              <p><strong>xxx</strong></p>
+              <p>xxx</strong>
+            </div>
+          </div>
+         </li>
+
+        <!-- xxx -->
+         <li id="qa-xxx">
+          <div class="item-row">
+            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
+
+            <div class="helper-info">
+              <p><strong>xxx</strong></p>
+              <p>xxx</strong>
+            </div>
+          </div>
+         </li>
+
+        <!-- xxx -->
+         <li id="qa-xxx">
+          <div class="item-row">
+            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
+
+            <div class="helper-info">
+              <p><strong>xxx</strong></p>
+              <p>xxx</strong>
+            </div>
+          </div>
+         </li>
+
+      </ul>
+    </section>
+
+    <section class="architecture">
+      <h2>Architecture &amp; Technical Infrastructure</h2>
+      <ul class="checklist">
 
         <!-- Page Builder -->
         <li id="qa-page-builder">
           <div class="item-row">
-            <span class="item-title">Does the site use a page builder?</span>
+            <span class="item-title"><strong>Page Builder Identification <button class="info-btn">i</button></strong> Does the site use a page builder?</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="page-builder-yes" name="page-builder" value="yes">
@@ -207,12 +323,16 @@
           <div class="radio-reveal" id="page-builder-yes-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
+          <div class="helper-info">
+            <p><strong>Page Builder Identification</strong></p>
+            <p>Confirming builder version (Elementor, Divi, etc.) and license status to ensure editability.</p>
+          </div>
         </li>
 
         <!-- Third-party Credentials -->
         <li id="qa-credentials">
           <div class="item-row">
-            <span class="item-title">Are there any third-party services or platforms that would require credentials (e.g. username, password, email address) for us to work with and/or migrate to a new site?</span>
+            <span class="item-title"><strong>Third-Party Integrations</strong> Are there any APIs or services requiring separate credentials, such as CRMs or Email platforms?</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="credentials-yes" name="credentials" value="yes">
@@ -249,16 +369,15 @@
 
         <!-- Hosting — no checkbox, textarea always visible -->
         <li id="qa-hosted">
-          <span class="item-title">Where is the site currently hosted?</span>
-          <textarea class="notes always-visible" placeholder="Enter notes here..."></textarea>
+          <span class="item-title"><strong>Current Hosting Assessment <button class="info-btn">i</button></strong></span>
+          
+            <textarea class="notes always-visible" placeholder="Enter notes here..."></textarea>
+          
+          <div class="helper-info">
+            <p><strong>Current Hosting Assessment</strong></p>
+            <p>Verification of current GoDaddy resource limits and origin server health prior to migration.</p>
+          </div>  
         </li>
-
-      </ul>
-    </section>
-
-    <section class="architecture">
-      <h2>Architecture &amp; Technical Infrastructure</h2>
-      <ul class="checklist">
 
       </ul>
     </section>

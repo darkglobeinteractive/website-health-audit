@@ -254,9 +254,11 @@ section h2 {
   color: #555;
 }
 
-/* Highlight selected Yes/No */
-.radio-option:has(input[value="yes"]:checked) label { color: #0aad8a; }
-.radio-option:has(input[value="no"]:checked)  label { color: #eb387f; }
+/* Highlight selected Yes/No and Done/Incomplete */
+.radio-option:has(input[value="yes"]:checked)        label { color: #0aad8a; }
+.radio-option:has(input[value="done"]:checked)       label { color: #0aad8a; }
+.radio-option:has(input[value="no"]:checked)         label { color: #eb387f; }
+.radio-option:has(input[value="incomplete"]:checked) label { color: #eb387f; }
 
 /* =============================================
    Radio-conditional reveal areas
