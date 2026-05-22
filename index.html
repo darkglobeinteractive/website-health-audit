@@ -238,17 +238,29 @@
           </div>
         </li>
 
-        <!-- xxx -->
-         <li id="qa-xxx">
+        <!-- Browser Console Audit -->
+        <li id="qa-browser-console-audit">
           <div class="item-row">
-            <span class="item-title"><strong>xxx <button class="info-btn">i</button></strong> xxx</span>
-
-            <div class="helper-info">
-              <p><strong>xxx</strong></p>
-              <p>xxx</strong>
+            <span class="item-title"><strong>Browser Console Audit <button class="info-btn">i</button></strong> Verify nothing is wrong via browser inspector window</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="browser-console-audit-all-good" name="browser-console-audit" value="all-good">
+                <label for="browser-console-audit-all-good">All Good</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="browser-console-audit-issues-found" name="browser-console-audit" value="issues-found">
+                <label for="browser-console-audit-issues-found">Issues Found</label>
+              </div>
             </div>
           </div>
-         </li>
+          <div class="radio-reveal" id="browser-console-audit-issues-found-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
+          </div>
+          <div class="helper-info">
+            <p><strong>Browser Console Audit</strong></p>
+            <p>Checking for hidden "red text" errors (JavaScript failures, broken assets) that break site functionality or slow down the visitor's browser.</p>
+          </div>
+        </li>
 
         <!-- xxx -->
          <li id="qa-xxx">

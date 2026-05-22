@@ -55,7 +55,8 @@ var RADIO_CONFIG = {
     onReset: function () { hideEl('qa-gtm-ga4'); resetRadioGroup('gtm-ga4'); }
   },
   'gtm-ga4':        { reveals: { no:  'gtm-ga4-no-reveal' } },
-  'pagespeed-insights': { reveals: { done: 'pagespeed-insights-done-reveal', incomplete: 'pagespeed-insights-incomplete-reveal' } },
+  'pagespeed-insights':    { reveals: { done: 'pagespeed-insights-done-reveal', incomplete: 'pagespeed-insights-incomplete-reveal' } },
+  'browser-console-audit': { reveals: { 'issues-found': 'browser-console-audit-issues-found-reveal' } },
   'cookie-consent': { reveals: { yes: 'cookie-consent-yes-reveal' } },
   'page-builder':   { reveals: { yes: 'page-builder-yes-reveal' } },
   'credentials':    { reveals: { yes: 'credentials-yes-reveal' } }
