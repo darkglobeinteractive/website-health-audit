@@ -47,7 +47,7 @@ window.addEventListener('beforeprint', function () {
  *   onReset   — optional side-effects when the group is fully deselected
  */
 var RADIO_CONFIG = {
-  'indexing-status': { reveals: { no: 'indexing-status-no-reveal' } },
+  'indexing-status': { reveals: { no: 'indexing-status-no-reveal', incomplete: 'indexing-status-incomplete-reveal' } },
   'sitemap-health': { reveals: { no: 'sitemap-health-no-reveal' } },
   'ssl-security': { reveals: { no: 'ssl-security-no-reveal' } },
   'ga':             { reveals: { yes: 'ga-yes-reveal',               no: 'ga-no-reveal' } },
