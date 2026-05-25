@@ -50,23 +50,24 @@ var RADIO_CONFIG = {
   'indexing-status': { reveals: { no: 'indexing-status-no-reveal', incomplete: 'indexing-status-incomplete-reveal' } },
   'sitemap-health': { reveals: { no: 'sitemap-health-no-reveal' } },
   'ssl-security': { reveals: { no: 'ssl-security-no-reveal', yes: 'ssl-security-no-reveal' } },
-  'ga':             { reveals: { yes: 'ga-yes-reveal',               no: 'ga-no-reveal' } },
+  'ga':             { reveals: { yes: 'ga-yes-reveal',               no: 'ga-no-reveal', incomplete: 'ga-no-reveal' } },
   'gtm': {
-    reveals:  { yes: 'gtm-yes-reveal', no: 'gtm-no-reveal' },
+    reveals:  { yes: 'gtm-yes-reveal', no: 'gtm-no-reveal', incomplete: 'gtm-no-reveal' },
     onSelect: function (value) {
       if (value === 'yes') { showEl('qa-gtm-ga4'); }
       if (value === 'no')  { hideEl('qa-gtm-ga4'); resetRadioGroup('gtm-ga4'); }
+      if (value === 'incomplete')  { hideEl('qa-gtm-ga4'); resetRadioGroup('gtm-ga4'); }
     },
     onReset: function () { hideEl('qa-gtm-ga4'); resetRadioGroup('gtm-ga4'); }
   },
-  'gtm-ga4':        { reveals: { no:  'gtm-ga4-no-reveal' } },
+  'gtm-ga4':        { reveals: { no:  'gtm-ga4-no-reveal', incomplete:  'gtm-ga4-no-reveal' } },
   'pagespeed-insights':    { reveals: { done: 'pagespeed-insights-done-reveal', incomplete: 'pagespeed-insights-incomplete-reveal' } },
   'browser-console-audit': { reveals: { 'issues-found': 'browser-console-audit-issues-found-reveal' } },
   'mobile-ux-review':          { reveals: { 'issues-found': 'mobile-ux-review-issues-found-reveal' } },
   'accessibility-compliance':  { reveals: { 'issues-found': 'accessibility-compliance-issues-found-reveal' } },
   'cookie-consent': { reveals: { yes: 'cookie-consent-yes-reveal' } },
-  'page-builder':   { reveals: { yes: 'page-builder-yes-reveal' } },
-  'credentials':    { reveals: { yes: 'credentials-yes-reveal' } }
+  'page-builder':   { reveals: { yes: 'page-builder-yes-reveal', incomplete: 'page-builder-yes-reveal' } },
+  'credentials':    { reveals: { yes: 'credentials-yes-reveal', incomplete: 'credentials-incomplete-reveal' } }
 };
 
 var radioPreClick = null;

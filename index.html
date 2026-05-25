@@ -32,6 +32,11 @@
 
   <main>
 
+    <section id="summary-section">
+      <h2>Summary</h2>
+      <textarea placeholder="Enter notes here..."></textarea>
+    </section>
+
     <section class="visibility">
       <h2>Visibility &amp; Search Engine Health</h2>
       <ul class="checklist">
@@ -132,6 +137,10 @@
                 <input type="radio" id="ga-no" name="ga" value="no">
                 <label for="ga-no">No</label>
               </div>
+              <div class="radio-option">
+                <input type="radio" id="ga-incomplete" name="ga" value="incomplete">
+                <label for="ga-incomplete">Incomplete</label>
+              </div>
             </div>
           </div>
           <div class="radio-reveal" id="ga-yes-reveal">
@@ -162,6 +171,10 @@
                 <input type="radio" id="gtm-no" name="gtm" value="no">
                 <label for="gtm-no">No</label>
               </div>
+              <div class="radio-option">
+                <input type="radio" id="gtm-incomplete" name="gtm" value="incomplete">
+                <label for="gtm-incomplete">Incomplete</label>
+              </div>
             </div>
           </div>
           <div class="radio-reveal" id="gtm-yes-reveal">
@@ -183,6 +196,10 @@
                   <div class="radio-option">
                     <input type="radio" id="gtm-ga4-no" name="gtm-ga4" value="no">
                     <label for="gtm-ga4-no">No</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" id="gtm-ga4-incomplete" name="gtm-ga4" value="incomplete">
+                    <label for="gtm-ga4-incomplete">Incomplete</label>
                   </div>
                 </div>
               </div>
@@ -409,6 +426,10 @@
                 <input type="radio" id="page-builder-no" name="page-builder" value="no">
                 <label for="page-builder-no">No</label>
               </div>
+              <div class="radio-option">
+                <input type="radio" id="page-builder-incomplete" name="page-builder" value="incomplete">
+                <label for="page-builder-incomplete">Incomplete</label>
+              </div>
             </div>
           </div>
           <div class="radio-reveal" id="page-builder-yes-reveal">
@@ -433,7 +454,14 @@
                 <input type="radio" id="credentials-no" name="credentials" value="no">
                 <label for="credentials-no">No</label>
               </div>
+              <div class="radio-option">
+                <input type="radio" id="credentials-incomplete" name="credentials" value="incomplete">
+                <label for="credentials-incomplete">Incomplete</label>
+              </div>
             </div>
+          </div>
+          <div class="radio-reveal" id="credentials-incomplete-reveal">
+            <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
           <div class="radio-reveal" id="credentials-yes-reveal">
             <div class="credential-table-wrap">
@@ -481,15 +509,6 @@
           <label>
             <input type="checkbox">
             <span>Run Claude's <code>/init</code> command to get an overview of theme functionality</span>
-          </label>
-          <button class="add-notes" type="button">Add Notes</button>
-          <textarea class="notes" placeholder="Enter notes here..."></textarea>
-        </li>
-
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>Run a browser-based audit of Accessibility concerns</span>
           </label>
           <button class="add-notes" type="button">Add Notes</button>
           <textarea class="notes" placeholder="Enter notes here..."></textarea>
