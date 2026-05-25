@@ -94,6 +94,32 @@ header h2 {
   background: rgba(28, 240, 196, 0.12);
 }
 
+.audit-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+#clear-audit-btn {
+  background: transparent;
+  border: 1px solid rgba(235, 56, 127, 0.35);
+  border-radius: 4px;
+  color: rgba(235, 56, 127, 0.6);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.75rem;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+#clear-audit-btn:hover {
+  background: rgba(235, 56, 127, 0.1);
+  border-color: #eb387f;
+  color: #eb387f;
+}
+
 /* date input calendar icon color on webkit */
 .client-field input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1) opacity(0.5);
@@ -709,7 +735,8 @@ button.add-credential-row:hover {
   /* Hide interactive-only elements */
   .info-btn,
   .helper-info,
-  .info-modal {
+  .info-modal,
+  .audit-controls {
     display: none !important;
   }
 

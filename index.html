@@ -25,6 +25,9 @@
         <input type="date" id="audit-date">
       </div>
     </div>
+    <div class="audit-controls">
+      <button id="clear-audit-btn" type="button">Clear / Start New Audit</button>
+    </div>
   </header>
 
   <main>
@@ -364,10 +367,10 @@
               <label for="qa-version-wordpress">WordPress Version</label><input id="qa-version-wordpress" type="text">
             </div>
             <div class="item">
-              <label for="qa-version-php">PHP Version</label><input type="text">
+              <label for="qa-version-php">PHP Version</label><input id="qa-version-php" type="text">
             </div>
             <div class="item">
-              <label for="qa-version-mysql">MySQL Version</label><input type="text">
+              <label for="qa-version-mysql">MySQL Version</label><input id="qa-version-mysql" type="text">
             </div>            
           </div>
          </li>
@@ -456,7 +459,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="actions-section">
       <h2>Actions to be Taken During Site Evaluation</h2>
       <ul class="checklist">
 
