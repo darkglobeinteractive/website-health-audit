@@ -156,6 +156,10 @@ section h2 {
   text-transform: uppercase;
 }
 
+section .content {
+  padding: 1.25rem 1.5rem;
+}
+
 /* =============================================
    Checklist
    ============================================= */
@@ -468,7 +472,8 @@ button.add-notes:hover {
    Notes Textarea
    ============================================= */
 
-textarea.notes {
+textarea.notes,
+textarea.standard {
   border: 1px solid #d0d8e4;
   border-radius: 4px;
   display: none;
@@ -490,7 +495,13 @@ textarea.notes.always-visible {
   display: block;
 }
 
-textarea.notes:focus {
+textarea.standard {
+  display: block;
+  margin-top: 0;
+}
+
+textarea.notes:focus,
+textarea.standard:focus {
   border-color: #1cf0c4;
   outline: none;
 }
