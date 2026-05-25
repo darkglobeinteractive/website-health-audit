@@ -94,7 +94,7 @@
         <!-- SSL & Security Encryption -->
         <li id="ssl-security">
           <div class="item-row">
-            <span class="item-title"><strong>SSL &amp; Security Encryption</strong> Valid SSL certificate is active and there are no "mixed content" warnings</span>
+            <span class="item-title"><strong>SSL &amp; Security Encryption <button class="info-btn">i</button></strong> Valid SSL certificate is active and there are no "mixed content" warnings</span>
             <div class="radio-group">
               <div class="radio-option">
                 <input type="radio" id="ssl-security-yes" name="ssl-security" value="yes">
@@ -109,7 +109,14 @@
           <div class="radio-reveal" id="ssl-security-no-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
           </div>
-          <div class="helper-info"></div>
+          <div class="helper-info">
+            <p><strong>SSL &amp; Security Encryption</strong></p>
+            <p>You can run one of the following commands in Terminal to check this:</p>
+            <ul>
+              <li><code>openssl s_client -connect example.com:443 -servername example.com</code></li>
+              <li><code>curl -vI https://example.com 2>&1 | grep -E "SSL|expire|issuer"</code></li>
+            </ul>
+          </div>
         </li>
 
         <!-- Google Analytics -->
@@ -241,7 +248,7 @@
             </div>
           </div>
           <div class="radio-reveal" id="pagespeed-insights-done-reveal">
-            <input type="text" placeholder="Enter PageSpeed URL here">
+            <input type="text" class="full-width" placeholder="Enter PageSpeed URL here">
           </div>
           <div class="radio-reveal" id="pagespeed-insights-incomplete-reveal">
             <textarea class="notes" placeholder="Enter notes here..."></textarea>
