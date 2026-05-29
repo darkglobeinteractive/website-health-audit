@@ -15,6 +15,13 @@ body {
   color: #1a1a1a;
   background: #f0f2f4;
 }
+a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+a:hover {
+  color: #eb387f;
+}
 
 /* =============================================
    Header
@@ -94,12 +101,6 @@ header h2 {
   background: rgba(28, 240, 196, 0.12);
 }
 
-.audit-controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-}
-
 #clear-audit-btn {
   background: transparent;
   border: 1px solid rgba(235, 56, 127, 0.35);
@@ -110,14 +111,127 @@ header h2 {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  padding: 0.3rem 0.75rem;
+  padding: 0.38rem 0.75rem;
+  text-align: left;
   transition: border-color 0.15s, color 0.15s, background 0.15s;
+  width: 100%;
 }
 
 #clear-audit-btn:hover {
   background: rgba(235, 56, 127, 0.1);
   border-color: #eb387f;
   color: #eb387f;
+}
+
+/* =============================================
+   Audit Panel (fixed bottom-right)
+   ============================================= */
+
+#audit-panel {
+  background: #0a151a;
+  border: 1px solid rgba(28, 240, 196, 0.2);
+  border-radius: 8px;
+  bottom: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  padding: 1rem 1.1rem;
+  position: fixed;
+  right: 1.5rem;
+  z-index: 100;
+}
+
+#audit-panel-title {
+  color: #1cf0c4;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  margin-bottom: 0.85rem;
+  max-width: 170px;
+  text-transform: uppercase;
+}
+
+.audit-panel-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.audit-panel-btn {
+  background: rgba(28, 240, 196, 0.07);
+  border: 1px solid rgba(28, 240, 196, 0.3);
+  border-radius: 4px;
+  color: #1cf0c4;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.38rem 0.75rem;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s;
+  width: 100%;
+}
+
+.audit-panel-btn:hover {
+  background: rgba(28, 240, 196, 0.14);
+  border-color: #1cf0c4;
+}
+
+/* =============================================
+   Import Modal
+   ============================================= */
+
+.import-modal-heading {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  padding-right: 1.5rem;
+}
+
+.import-modal-desc {
+  color: #555;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.import-modal-desc code {
+  background: #f0f3f7;
+  border-radius: 3px;
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+}
+
+.import-modal-field {
+  margin: 1.25rem 0 1rem;
+}
+
+.import-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#import-confirm-btn {
+  background: #0a151a;
+  border: 1px solid #1cf0c4;
+  border-radius: 4px;
+  color: #1cf0c4;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.45rem 1.25rem;
+  transition: background 0.15s;
+}
+
+#import-confirm-btn:hover:not(:disabled) {
+  background: #111e23;
+}
+
+#import-confirm-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
 }
 
 /* date input calendar icon color on webkit */
@@ -750,7 +864,8 @@ button.add-credential-row:hover {
   .info-btn,
   .helper-info,
   .info-modal,
-  .audit-controls {
+  #audit-panel,
+  #import-modal {
     display: none !important;
   }
 

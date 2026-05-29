@@ -25,9 +25,6 @@
         <input type="date" id="audit-date">
       </div>
     </div>
-    <div class="audit-controls">
-      <button id="clear-audit-btn" type="button">Clear / Start New Audit</button>
-    </div>
   </header>
 
   <main>
@@ -524,6 +521,30 @@
   <footer>
     <p>Website Health Audit</p>
   </footer>
+
+  <div id="audit-panel">
+    <div id="audit-panel-title">Website Health Audit</div>
+    <div class="audit-panel-buttons">
+      <button id="import-json-btn" class="audit-panel-btn" type="button">Import JSON</button>
+      <button id="export-json-btn" class="audit-panel-btn" type="button">Export JSON</button>
+      <button id="clear-audit-btn" type="button">Clear / Start New Audit</button>
+    </div>
+  </div>
+
+  <div id="import-modal" class="info-modal">
+    <div class="info-modal-backdrop"></div>
+    <div class="info-modal-box">
+      <button class="info-modal-close" aria-label="Close">&times;</button>
+      <p class="import-modal-heading">Import Audit</p>
+      <p class="import-modal-desc">Select a <code>.json</code> file exported from a previous audit. All current data will be replaced.</p>
+      <div class="import-modal-field">
+        <input type="file" id="import-file-input" accept=".json,application/json">
+      </div>
+      <div class="import-modal-actions">
+        <button id="import-confirm-btn" type="button" disabled>Import</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

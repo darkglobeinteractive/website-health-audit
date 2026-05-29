@@ -29,6 +29,7 @@ document.addEventListener('input', function (e) {
       e.target.classList.toggle('has-content', e.target.value.trim().length > 0);
     }
   }
+  if (e.target.id === 'client-name') updatePanelTitle();
   saveState();
 });
 
@@ -226,7 +227,7 @@ document.addEventListener('click', function (e) {
 });
 
 document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') closeInfoModal();
+  if (e.key === 'Escape') { closeInfoModal(); closeImportModal(); }
 });
 
 /* =============================================
@@ -260,11 +261,18 @@ function hideEl(id) {
   if (el) el.style.display = 'none';
 }
 
+function updatePanelTitle() {
+  var titleEl = document.getElementById('audit-panel-title');
+  if (!titleEl) return;
+  var clientName = (document.getElementById('client-name').value || '').trim();
+  titleEl.textContent = clientName ? clientName + ' Website Health Audit' : 'Website Health Audit';
+}
+
 /* =============================================
    State persistence — localStorage auto-save
    ============================================= */
 
-function saveState() {
+function buildState() {
   var state = {};
 
   // Header inputs
@@ -343,9 +351,13 @@ function saveState() {
     };
   });
 
+  return state;
+}
+
+function saveState() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  } catch (e) { /* storage unavailable or quota exceeded */ }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(buildState()));
+  } catch (e) {}
 }
 
 function restoreState() {
@@ -489,15 +501,80 @@ function clearState() {
   location.reload();
 }
 
+/* =============================================
+   JSON Export / Import
+   ============================================= */
+
+function exportAudit() {
+  var state      = buildState();
+  var clientName = (document.getElementById('client-name').value || '').trim();
+  var auditDate  = document.getElementById('audit-date').value || new Date().toISOString().slice(0, 10);
+  var slug       = clientName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'audit';
+  var filename   = slug + '-website-health-audit-' + auditDate + '.json';
+  var blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+  var url  = URL.createObjectURL(blob);
+  var a    = document.createElement('a');
+  a.href     = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+var importModal      = document.getElementById('import-modal');
+var importFileInput  = document.getElementById('import-file-input');
+var importConfirmBtn = document.getElementById('import-confirm-btn');
+
+function openImportModal() {
+  importFileInput.value     = '';
+  importConfirmBtn.disabled = true;
+  importModal.style.display = 'flex';
+}
+
+function closeImportModal() {
+  importModal.style.display = 'none';
+}
+
+importFileInput.addEventListener('change', function () {
+  importConfirmBtn.disabled = !importFileInput.files.length;
+});
+
+importConfirmBtn.addEventListener('click', function () {
+  var file = importFileInput.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    var state;
+    try { state = JSON.parse(e.target.result); } catch (err) {
+      alert('Invalid JSON file. Please select a valid audit export.');
+      return;
+    }
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (err) {}
+    location.reload();
+  };
+  reader.readAsText(file);
+});
+
+importModal.querySelector('.info-modal-backdrop').addEventListener('click', closeImportModal);
+importModal.querySelector('.info-modal-close').addEventListener('click',    closeImportModal);
+
 // Persist on select/checkbox change events
 document.addEventListener('change', saveState);
 
-// Wire up clear button
+// Wire up panel buttons
 var clearAuditBtn = document.getElementById('clear-audit-btn');
 if (clearAuditBtn) clearAuditBtn.addEventListener('click', clearState);
 
-// Restore any previously saved state (runs before the date IIFE below)
+var importJsonBtn = document.getElementById('import-json-btn');
+if (importJsonBtn) importJsonBtn.addEventListener('click', openImportModal);
+
+var exportJsonBtn = document.getElementById('export-json-btn');
+if (exportJsonBtn) exportJsonBtn.addEventListener('click', exportAudit);
+
+// Restore any previously saved state then sync the panel title
 restoreState();
+updatePanelTitle();
 
 /* =============================================
    Set today's date as the default audit date
