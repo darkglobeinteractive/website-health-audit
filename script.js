@@ -300,6 +300,10 @@ function saveState() {
     state['plugin-audit-notes-visible'] = pluginAuditNotes.classList.contains('visible');
   }
 
+  // Summary section textarea
+  var summaryNotes = document.querySelector('#summary-section textarea');
+  if (summaryNotes) state['summary-notes'] = summaryNotes.value;
+
   // Hosting always-visible notes
   var hostingNotes = document.querySelector('#qa-hosted textarea');
   if (hostingNotes) state['hosting-notes'] = hostingNotes.value;
@@ -398,6 +402,10 @@ function restoreState() {
       if (pluginAuditBtn) pluginAuditBtn.textContent = 'Hide Notes';
     }
   }
+
+  // Summary section textarea
+  var summaryNotes = document.querySelector('#summary-section textarea');
+  if (summaryNotes && state['summary-notes'] != null) summaryNotes.value = state['summary-notes'];
 
   // Hosting always-visible notes
   var hostingNotes = document.querySelector('#qa-hosted textarea');
