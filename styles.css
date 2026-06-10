@@ -700,6 +700,11 @@ footer {
   vertical-align: top;
 }
 
+.plugin-table textarea.plugin-name {
+  overflow: hidden;
+  resize: none;
+}
+
 .plugin-table input[type="text"]:focus,
 .plugin-table textarea:focus,
 .plugin-table select:focus,
